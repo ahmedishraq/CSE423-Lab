@@ -40,9 +40,16 @@ public void display(GLAutoDrawable drawable) {
     GL2 gl = drawable.getGL().getGL2();
 
     gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-    /*
-     * put your code here
-     */
+    gl.glPointSize(10.0f);
+    gl.glColor3d(1,0,0);
+    
+    gl.glBegin(GL2.GL_POINTS);
+    int max = 200;
+    int min = -200;
+    
+    Random rm = new Random();
+    
+    
     
 }
 
