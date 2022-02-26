@@ -44,11 +44,16 @@ public void display(GLAutoDrawable drawable) {
     gl.glColor3d(1,0,0);
     
     gl.glBegin(GL2.GL_POINTS);
-    int max = 200;
-    int min = -200;
+    int max = 100;
+    int min = -100;
     
     Random rm = new Random();
-    
+    for(int i=0;i<50;i++){
+        float x = rm.nextFloat()*(max-min+1)+min;
+        float y = rm.nextFloat()*(max-min+1)+min;
+        gl.glVertex2d(x,y);
+    }
+    gl.glEnd();
     
     
 }
