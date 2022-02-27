@@ -8,6 +8,7 @@ Lab solutions of CSE423 Computer Graphics course of [BRAC University,](https://w
 ## Libraries Used
 + OpenGL libraries
 + Gluegen
++ JOGL
 
 ## GUI
 + Java Swing
