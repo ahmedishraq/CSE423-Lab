@@ -1,7 +1,4 @@
-/**
- *
- * @author ahmed_ishraq
- */
+
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLCapabilities;
@@ -38,21 +35,21 @@ class ThirdGLEventListener implements GLEventListener {
         GL2 gl = drawable.getGL().getGL2();
 
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-        
+        Scanner sc = new Scanner(System.in);
+
         System.out.print("Enter your Student ID: ");
-        Scanner sc = new Scanner (System.in);
-        int id = sc.nextInt();
-        
-        if(id%2 == 0){
+        int ID = sc.nextInt();
+
+        if (ID % 2 == 0) {
             DDA(gl, -200, 100, 0, 100);
             DDA(gl, -100, -100, -100, 100);
-        }
-        else if(id%2 != 0){
+        } else if (ID % 2 != 0) {
             DDA(gl, -10, -100, -10, 100);
             DDA(gl, 100, -100, 100, 100);
             DDA(gl, -10, 0, 100, 0);
+        } else {
+            System.out.println("Unauthorized  Input");
         }
-
     }
 
     public void reshape(GLAutoDrawable drawable, int x, int y, int width,
@@ -66,41 +63,43 @@ class ThirdGLEventListener implements GLEventListener {
     public void dispose(GLAutoDrawable arg0) {
 
     }
-    
-    public void DDA(GL2 gl, float x1, float x2, float y1, float y2){
-        gl.glColor3d(1,0,0);
+
+    public void DDA(GL2 gl, float x1, float y1, float x2, float y2) {
+
         gl.glPointSize(3.0f);
-        
+        gl.glColor3d(255, 0, 0);
+
         float dx = x2 - x1;
         float dy = y2 - y1;
-        int check;
-        
-        if(dx < 0){
+
+        if (dx < 0) {
             dx = dx * -1;
         }
-        if(dy < 0 ){
+        if (dy < 0) {
             dy = dy * -1;
         }
-        if(dx > dy){
+
+        int check;
+
+        if (dx > dy) {
             check = Math.round(dx);
-        }
-        else{
+        } else {
             check = Math.round(dy);
         }
-        
-        float incX = dx/check;
-        float incY = dy/check;
-        
+
+        float incX = dx / check;
+        float incY = dy / check;
+
         float x = x1;
         float y = y1;
-        
-        for(int i=0, j=0;i<check;i++,j++){
-            if (j == 7){
+
+        for (int i = 0, j = 0; i < check; i++, j++) {
+            if (j == 7) {
                 j = 0;
             }
-            if(j < 2){
+            if (j < 2) {
                 gl.glBegin(GL2.GL_POINTS);
-                gl.glVertex2d(x,y);
+                gl.glVertex2d(x, y);
                 gl.glEnd();
             }
             x = x + incX;
