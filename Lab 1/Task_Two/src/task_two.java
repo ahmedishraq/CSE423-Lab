@@ -11,7 +11,6 @@ import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
 import java.lang.Math;
 import javax.swing.JFrame;
-import java.util.*;
 
 class ThirdGLEventListener implements GLEventListener {
 /**
@@ -33,25 +32,13 @@ public void init(GLAutoDrawable gld) {
     glu.gluOrtho2D(-250.0, 250.0, -150.0, 150.0);
 }
 
+/**
+ * Take care of drawing here.
+ */
 public void display(GLAutoDrawable drawable) {
     GL2 gl = drawable.getGL().getGL2();
 
     gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
-    gl.glPointSize(10.0f);
-    gl.glColor3d(1,0,0);
-    
-    gl.glBegin(GL2.GL_POINTS);
-    int max = 100;
-    int min = -100;
-    
-    Random rm = new Random();
-    for(int i=0;i<50;i++){
-        float x = rm.nextFloat()*(max-min+1)+min;
-        float y = rm.nextFloat()*(max-min+1)+min;
-        gl.glVertex2d(x,y);
-    }
-    gl.glEnd();
-    
     
 }
 
@@ -68,7 +55,7 @@ public void dispose(GLAutoDrawable arg0)
  
 }
 }
-public class task_one
+public class task_two
 {
 public static void main(String args[])
 {
