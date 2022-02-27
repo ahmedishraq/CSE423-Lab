@@ -1,4 +1,3 @@
-
 /**
  *
  * @author ahmed_ishraq
@@ -40,12 +39,18 @@ class ThirdGLEventListener implements GLEventListener {
 
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
         
+        System.out.print("Enter your Student ID: ");
         Scanner sc = new Scanner (System.in);
         int id = sc.nextInt();
         
         if(id%2 == 0){
             DDA(gl, -200, 100, 0, 100);
             DDA(gl, -100, -100, -100, 100);
+        }
+        else if(id%2 != 0){
+            DDA(gl, -10, -100, -10, 100);
+            DDA(gl, 100, -100, 100, 100);
+            DDA(gl, -10, 0, 100, 0);
         }
 
     }
@@ -63,12 +68,12 @@ class ThirdGLEventListener implements GLEventListener {
     }
     
     public void DDA(GL2 gl, float x1, float x2, float y1, float y2){
-        gl.glColor3d(255,0,0);
+        gl.glColor3d(1,0,0);
         gl.glPointSize(3.0f);
         
         float dx = x2 - x1;
         float dy = y2 - y1;
-        int check = 0;
+        int check;
         
         if(dx < 0){
             dx = dx * -1;
