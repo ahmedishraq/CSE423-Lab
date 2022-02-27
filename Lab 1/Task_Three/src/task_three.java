@@ -39,6 +39,14 @@ class ThirdGLEventListener implements GLEventListener {
         GL2 gl = drawable.getGL().getGL2();
 
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
+        
+        Scanner sc = new Scanner (System.in);
+        int id = sc.nextInt();
+        
+        if(id%2 == 0){
+            DDA(gl, -200, 100, 0, 100);
+            DDA(gl, -100, -100, -100, 100);
+        }
 
     }
 
