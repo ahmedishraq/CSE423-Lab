@@ -32,14 +32,89 @@ public void init(GLAutoDrawable gld) {
     glu.gluOrtho2D(-250.0, 250.0, -150.0, 150.0);
 }
 
-/**
- * Take care of drawing here.
- */
 public void display(GLAutoDrawable drawable) {
     GL2 gl = drawable.getGL().getGL2();
 
     gl.glClear(GL2.GL_COLOR_BUFFER_BIT);
     
+    // house upper part
+    gl.glColor3d(139,0,0);
+    gl.glPointSize(10.0f);
+    gl.glBegin(GL2.GL_TRIANGLES);
+    gl.glVertex2d(100,50);
+    gl.glVertex2d(0,130);
+    gl.glVertex2d(-100,50);
+    gl.glEnd();
+    
+    // house boundary wall 
+    gl.glColor3d(0,255,0);
+    gl.glPointSize(10.0f);
+    gl.glBegin(GL2.GL_LINES);
+    // right wall
+    gl.glVertex2d(100,-100);
+    gl.glVertex2d(100,50);
+    // lower wall 
+    gl.glVertex2d(100,-100);
+    gl.glVertex2d(-100,-100);
+    // left wall
+    gl.glVertex2d(-100,-100);
+    gl.glVertex2d(-100,50);
+    gl.glEnd();
+    
+    // house door 
+    gl.glColor3d(0,0,255);
+    gl.glPointSize(10.0f);
+    gl.glBegin(GL2.GL_LINES);
+    // left door wall 
+    gl.glVertex2d(20,-100);
+    gl.glVertex2d(20,-30);
+    // left door wall 
+    gl.glVertex2d(-20,-30);
+    gl.glVertex2d(-20,-100);
+    // upper door wall 
+    gl.glVertex2d(20,-30);
+    gl.glVertex2d(-20,-30);
+    gl.glEnd();
+    
+    // house door handle 
+    gl.glColor3d(255,0,0);
+    gl.glPointSize(10.0f);
+    gl.glBegin(GL2.GL_POINTS);
+    gl.glVertex2d(10,-70);
+    gl.glEnd();
+    
+    // house window 
+    gl.glColor3d(0,255,255);
+    gl.glPointSize(10.0f);
+    gl.glBegin(GL2.GL_LINES);
+    // left window 
+    gl.glVertex2d(-40,0);
+    gl.glVertex2d(-40,30);
+    
+    gl.glVertex2d(-80,0);
+    gl.glVertex2d(-40,0);
+    
+    gl.glVertex2d(-80,30);
+    gl.glVertex2d(-80,0);
+    
+    gl.glVertex2d(-40,30);
+    gl.glVertex2d(-80,30);
+    
+    // right window 
+    gl.glVertex2d(80,0);
+    gl.glVertex2d(80,30);
+    
+   gl.glVertex2d(40,0);
+   gl.glVertex2d(80,0);
+    
+    gl.glVertex2d(40,30);
+    gl.glVertex2d(40,0);
+    
+    gl.glVertex2d(80,30);
+    gl.glVertex2d(40,30);
+    
+    
+    gl.glEnd();
 }
 
 public void reshape(GLAutoDrawable drawable, int x, int y, int width,
