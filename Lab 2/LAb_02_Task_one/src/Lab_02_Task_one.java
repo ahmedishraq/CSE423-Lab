@@ -66,7 +66,7 @@ public class Lab_02_Task_one implements GLEventListener {
     private void DrawMPL(GL2 gl, int x1, int y1, int x2, int y2) {
 
         gl.glPointSize(5.0f);
-        gl.glColor3d(1, 1, 1); // white
+        gl.glColor3d(1, 0, 0); // red 
         // System.out.println("Given: " + x1 + ", " + y1 + " ," + x2 + ", " + y2);
 
         int zone = findZone(x1, y1, x2, y2);
