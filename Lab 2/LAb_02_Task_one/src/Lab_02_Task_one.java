@@ -37,10 +37,6 @@ public class Lab_02_Task_one implements GLEventListener {
 
         // points should be in the same zone
 
-//        // for 7
-//        DrawMPL(gl, 0, 0, 50, 0);
-//        DrawMPL(gl, 50, 0, 0, -50);
-
         // for 6 
         DrawMPL(gl,-40,0,-70,0);
         DrawMPL(gl,-70,0,-70,-60);
@@ -52,12 +48,6 @@ public class Lab_02_Task_one implements GLEventListener {
         DrawMPL(gl,0,0,0,-60);
         DrawMPL(gl,0,0,-20,-20);
         DrawMPL(gl,-20,-60,20,-60);
-
-//        // for 3
-//        DrawMPL(gl, 70, 0, 120, 0);
-//        DrawMPL(gl, 70, -50, 120, -50);
-//        DrawMPL(gl, 120, 0, 120, -50);
-//        DrawMPL(gl, 85, -25, 120, -25);
 
     }
 
@@ -74,7 +64,6 @@ public class Lab_02_Task_one implements GLEventListener {
 
         gl.glPointSize(5.0f);
         gl.glColor3d(1, 0, 0); // red 
-        // System.out.println("Given: " + x1 + ", " + y1 + " ," + x2 + ", " + y2);
 
         int zone = findZone(x1, y1, x2, y2);
 
@@ -88,8 +77,6 @@ public class Lab_02_Task_one implements GLEventListener {
         x2 = convertedZones[2];
         y2 = convertedZones[3];
 
-        // System.out.println("Zone 0 Converted: " + x1 + ", " + y1 + " ," + x2 + ", " +
-        // y2);
         int dxUpdated = convertedZones[2] - convertedZones[0];
         int dyUpdated = convertedZones[3] - convertedZones[1];
 
@@ -171,7 +158,6 @@ public class Lab_02_Task_one implements GLEventListener {
 
     int[] convertZone0(int zone, int x1, int y1, int x2, int y2) {
         int[] convertedZones = new int[4];
-        // 0 = x1 , 1 = y1 , 2 = x2 , 3 = y2
         switch (zone) {
             case 0:
                 convertedZones[0] = x1;
@@ -227,7 +213,6 @@ public class Lab_02_Task_one implements GLEventListener {
             default:
                 break;
         }
-        // System.out.println("C");
         return convertedZones;
 
     }
@@ -279,15 +264,6 @@ public class Lab_02_Task_one implements GLEventListener {
 
     }
 
-    // int convertX(int x, int y, int zone) {
-    // int convertedX = 0;
-    // return convertedX;
-    // }
-    //
-    // int convertY(int x, int y, int zone) {
-    // int convertedY = 0;
-    // return convertedY;
-    // }
     public void dispose(GLAutoDrawable arg0) {
         // do nothing
     }
