@@ -41,16 +41,23 @@ public class Lab_02_Task_one implements GLEventListener {
 //        DrawMPL(gl, 0, 0, 50, 0);
 //        DrawMPL(gl, 50, 0, 0, -50);
 
+        // for 6 
+        DrawMPL(gl,-40,0,-70,0);
+        DrawMPL(gl,-70,0,-70,-60);
+        DrawMPL(gl,-70,-60,-40,-60);
+        DrawMPL(gl,-40,-60,-40,-35);
+        DrawMPL(gl,-40,-35,-70,-35);
+
         // for 1
         DrawMPL(gl,0,0,0,-60);
         DrawMPL(gl,0,0,-20,-20);
         DrawMPL(gl,-20,-60,20,-60);
 
-        // for 3
-        DrawMPL(gl, 70, 0, 120, 0);
-        DrawMPL(gl, 70, -50, 120, -50);
-        DrawMPL(gl, 120, 0, 120, -50);
-        DrawMPL(gl, 85, -25, 120, -25);
+//        // for 3
+//        DrawMPL(gl, 70, 0, 120, 0);
+//        DrawMPL(gl, 70, -50, 120, -50);
+//        DrawMPL(gl, 120, 0, 120, -50);
+//        DrawMPL(gl, 85, -25, 120, -25);
 
     }
 
@@ -295,7 +302,7 @@ public class Lab_02_Task_one implements GLEventListener {
         glcanvas.addGLEventListener(l);
         glcanvas.setSize(1000, 1000);
         // creating frame
-        final JFrame frame = new JFrame("Line Draw using MPL");
+        final JFrame frame = new JFrame("Student ID: 19301261. Let's draw: 61");
         // adding canvas to frame
         frame.getContentPane().add(glcanvas);
         frame.setSize(frame.getContentPane().getPreferredSize());
