@@ -59,23 +59,23 @@ public class Lab3 implements GLEventListener {
     private void drawCircle(GL2 gl, int x1 , int y1 ,int r) {
 
         gl.glPointSize(2.5f);
-        gl.glColor3d(1, 1, 1);
+        gl.glColor3d(1, 0, 0);
 
         int x = r;
         int y = 0;
-        int d = 5 - (4 * r);
+        int d = 1 - r;
 
         
         draw8Way(gl , x , y , x1 , y1);
         
         while (y <= x) {
             if (d < 0) {
-                d = d + ((2 * y + 3) * 4);
+                d = d + (2 * y + 3);
                 y++;
             }
             
             else {
-                d = d + ((2 * y - 2 * x + 5) * 4);
+                d = d + (2 * y - 2 * x + 5);
                 x--;
                 y++;
             }
